@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	
+</head>
+<body ng-app="Lession8">
+<!-- <my-directive></my-directive> -->
+	<div ng-controller="Hello">
+	<h1>{{MyName}}</h1>
+</div>
+
+
+
+<div ng-controller="MyContl">
+	<ul style="width:350px">
+		<li ng-repeat="item in mydata">
+			{{item.title}}
+			<p><em>{{item.body}}</em></p>
+		</li>
+	</ul>
+
+	<ul style="float: left">
+		<li ng-repeat="p in mphotos">
+			<img src="{{p.thumbnailUrl}}" alt="">
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>

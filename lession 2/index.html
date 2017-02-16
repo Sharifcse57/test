@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <script type="text/javascript">
+  // How to binding data from js to html view
+  // cacatination
+    window.onload =function(){
+      var x = 10;
+      document.getElementById('hello').innerHTML = x;
+      document.querySelector('#mytext').style.background = "red";
+      var arr = ['Home','about us','Service'];
+      var html ="<ul>";
+
+      for(var i =0; i<arr.length;i++){
+          html+="<li>"+arr[i]+"</li>";
+      }
+    html +="</ul>";
+    document.getElementById('mytext').innerHTML = html;
+
+    var m = 646.564564654;
+    console.log(m.toFixed(2));
+    }
+
+    function calculate(){
+      var num1 =   document.getElementById('num1').value;
+      var num2 =   document.getElementById('num2').value;
+      if (num1!=undefined && num2!=undefined) {
+          alert(parseInt(num1)+parseInt(num2));
+
+      }
+    }
+
+    function checkMe(val){
+      if(isNaN(val)==false){
+       document.getElementById('myname').style.borderColor='red';
+        return false;
+      }else{
+         document.getElementById('myname').style.borderColor='green';
+      }
+    }
+
+  </script>
+  </head>
+  <body>
+    <div id="hello">asdf</div>
+    <div id="mytext">
+
+    </div>
+
+
+      Enter number: <input type="number" id="num1" ><br>
+      Enter 2nd Number :  <input type="number" id="num2"><br>
+      <input type="submit" value="Submit" onclick="calculate()"><br>
+
+      <input type="text" id="myname" onblur="checkMe(this.value)">
+
+  </body>
+</html>

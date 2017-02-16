@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<title></title>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="chatController">
+	
+	<table>
+		<caption>table title and/or explanatory text</caption>
+		<thead>
+			<tr>
+				<th>header</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" ng-model="user.username" name=""></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td><input type="text" ng-model="user.address" name=""></td>
+			</tr>
+			<tr>
+				<td>Postcode:</td>
+				<td><input type="text" ng-model="user.postcode" name=""></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" ng-model="user.email" name=""></td>
+			</tr>
+                 <tr>
+				<td>Passowrd:</td>
+				<td><input type="password" ng-model="user.passworld" name=""></td>
+			</tr>
+		<tr>
+			<td colspan="7">
+				<button type="" ng-click="addData()">Add</button>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+{{arr}}
+</body>
+</html>

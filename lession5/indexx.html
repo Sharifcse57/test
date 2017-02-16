@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<title></title>
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+
+		$('#btnform').click(function(){
+			var name = $("#sname").val();
+    		var pid = $("#pid").val();
+    	//	$('#showhere').html(name +" "+pid);//cancetaions
+    	 $.ajax({
+    	 	url: 'example.php?name='+name,
+    	 	type: 'GET'
+    	 })
+    	 .done(function(data) {
+    	  var html = "<table>";
+    	  for (var i = 0; i < data.length; i++) {
+    	  	console.log(data[i]);
+    	 //	html+="<tr><td>"+data[i][1]+"</td></tr>";
+    	  }
+    	  html+="</table>";
+    	  $("#showhere").html(html);
+
+    	 })
+    	 .fail(function() {
+    	 	console.log("error");
+    	 })
+    	 .always(function() {
+    	 	console.log("complete");
+    	 });
+    	 
+		})
+    	
+    	$('#sname').change(function(){
+    		console.log($(this).val());
+    	});
+	});
+	</script>
+</head>
+<body>
+
+	Name:<input type="text" name="name" id="sname">
+	ID:<input type="text" name="id" id="pid">
+	<input type="submit" id="btnform">
+	<div id="showhere">
+		
+	</div>
+</body>
+</html>
